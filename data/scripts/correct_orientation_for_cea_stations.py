@@ -102,14 +102,14 @@ def main(cea_correction_file, base_dir, output_dir):
                     data.stats.sac.cmpaz = cmpaz
                     save_path = join(output_each_event_path,
                                      "extra", basename(each_sac_file))
-                    data.write(save_path)
+                    data.write(save_path, format="SAC")
                 else:
                     cmpaz = np.mod(cmpaz_corrected, 360)
                     data.stats.sac.cmpinc = cmpinc
                     data.stats.sac.cmpaz = cmpaz
                     save_path = join(output_each_event_path,
                                      basename(each_sac_file))
-                    data.write(save_path)
+                    data.write(save_path, format="SAC")
 
 
 if __name__ == "__main__":
