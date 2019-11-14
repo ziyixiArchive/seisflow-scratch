@@ -86,7 +86,9 @@ def main(cea_correction_file, base_dir, output_dir):
                 cmpinc = 90
                 cmpaz = 90
             else:
-                print(each_sac_file)
+                save_path = join(output_each_event_path,
+                                 "extra", basename(each_sac_file))
+                data.write(save_path, format="SAC")
                 continue
 
             network = data.stats.network
